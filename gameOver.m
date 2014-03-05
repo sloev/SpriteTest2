@@ -28,7 +28,7 @@
 - (SKLabelNode *)newScoreList
 
 {
-    
+    //test
     
     SKLabelNode *scoreList = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
     
