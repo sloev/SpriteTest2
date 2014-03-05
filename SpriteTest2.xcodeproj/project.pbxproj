@@ -21,6 +21,10 @@
 		8F0A374518BCC63A00C54440 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0A372718BCC63900C54440 /* UIKit.framework */; };
 		8F0A374D18BCC63A00C54440 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F0A374B18BCC63A00C54440 /* InfoPlist.strings */; };
 		8F0A374F18BCC63A00C54440 /* SpriteTest2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A374E18BCC63A00C54440 /* SpriteTest2Tests.m */; };
+		8F0A375918BCC64E00C54440 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0A375818BCC64E00C54440 /* SpriteKit.framework */; };
+		8F0A375C18BCC66400C54440 /* Hello.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A375B18BCC66400C54440 /* Hello.m */; };
+		8F0A375F18BCCC9400C54440 /* spaceShipScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A375E18BCCC9400C54440 /* spaceShipScene.m */; };
+		8F837FF118C76A290004FB44 /* gameOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F837FF018C76A290004FB44 /* gameOver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,13 @@
 		8F0A374A18BCC63A00C54440 /* SpriteTest2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpriteTest2Tests-Info.plist"; sourceTree = "<group>"; };
 		8F0A374C18BCC63A00C54440 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8F0A374E18BCC63A00C54440 /* SpriteTest2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpriteTest2Tests.m; sourceTree = "<group>"; };
+		8F0A375818BCC64E00C54440 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		8F0A375A18BCC66400C54440 /* Hello.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hello.h; sourceTree = "<group>"; };
+		8F0A375B18BCC66400C54440 /* Hello.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hello.m; sourceTree = "<group>"; };
+		8F0A375D18BCCC9400C54440 /* spaceShipScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spaceShipScene.h; sourceTree = "<group>"; };
+		8F0A375E18BCCC9400C54440 /* spaceShipScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spaceShipScene.m; sourceTree = "<group>"; };
+		8F837FEF18C76A290004FB44 /* gameOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gameOver.h; path = ../gameOver.h; sourceTree = "<group>"; };
+		8F837FF018C76A290004FB44 /* gameOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = gameOver.m; path = ../gameOver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F0A375918BCC64E00C54440 /* SpriteKit.framework in Frameworks */,
 				8F0A372618BCC63900C54440 /* CoreGraphics.framework in Frameworks */,
 				8F0A372818BCC63900C54440 /* UIKit.framework in Frameworks */,
 				8F0A372418BCC63900C54440 /* Foundation.framework in Frameworks */,
@@ -101,6 +113,7 @@
 		8F0A372218BCC63900C54440 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8F0A375818BCC64E00C54440 /* SpriteKit.framework */,
 				8F0A372318BCC63900C54440 /* Foundation.framework */,
 				8F0A372518BCC63900C54440 /* CoreGraphics.framework */,
 				8F0A372718BCC63900C54440 /* UIKit.framework */,
@@ -112,11 +125,17 @@
 		8F0A372918BCC63900C54440 /* SpriteTest2 */ = {
 			isa = PBXGroup;
 			children = (
+				8F837FEF18C76A290004FB44 /* gameOver.h */,
+				8F837FF018C76A290004FB44 /* gameOver.m */,
 				8F0A373218BCC63A00C54440 /* SpriteAppDelegate.h */,
 				8F0A373318BCC63A00C54440 /* SpriteAppDelegate.m */,
 				8F0A373518BCC63A00C54440 /* Main.storyboard */,
 				8F0A373818BCC63A00C54440 /* SpriteViewController.h */,
 				8F0A373918BCC63A00C54440 /* SpriteViewController.m */,
+				8F0A375A18BCC66400C54440 /* Hello.h */,
+				8F0A375B18BCC66400C54440 /* Hello.m */,
+				8F0A375D18BCCC9400C54440 /* spaceShipScene.h */,
+				8F0A375E18BCCC9400C54440 /* spaceShipScene.m */,
 				8F0A373B18BCC63A00C54440 /* Images.xcassets */,
 				8F0A372A18BCC63A00C54440 /* Supporting Files */,
 			);
@@ -252,7 +271,10 @@
 			files = (
 				8F0A373018BCC63A00C54440 /* main.m in Sources */,
 				8F0A373418BCC63A00C54440 /* SpriteAppDelegate.m in Sources */,
+				8F0A375F18BCCC9400C54440 /* spaceShipScene.m in Sources */,
+				8F0A375C18BCC66400C54440 /* Hello.m in Sources */,
 				8F0A373A18BCC63A00C54440 /* SpriteViewController.m in Sources */,
+				8F837FF118C76A290004FB44 /* gameOver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +485,7 @@
 				8F0A375418BCC63A00C54440 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F0A375518BCC63A00C54440 /* Build configuration list for PBXNativeTarget "SpriteTest2Tests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +494,7 @@
 				8F0A375718BCC63A00C54440 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

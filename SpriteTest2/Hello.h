@@ -1,5 +1,5 @@
 //
-//  SpriteViewController.h
+//  Hello.h
 //  SpriteTest2
 //
 //  Created by johannes on 2/25/14.
@@ -8,6 +8,6 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface SpriteViewController : UIViewController
+@interface Hello : SKScene
 
 @end
