@@ -63,8 +63,14 @@ static int level=1;
 
     [self addChild:[self newScoreLabel]];
     
+    SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"background"];
+    background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+    background.size=self.size;
+    background.zPosition=-1;
+    [self addChild:background];
+    
 }
--(SKSpriteNode *) newScoreLabel
+-(SKLabelNode *) newScoreLabel
 {
     SKLabelNode *scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
     scoreLabel.name = @"score";
@@ -91,7 +97,9 @@ static int level=1;
 }
 - (SKSpriteNode *) newPlayer
 {
-    SKSpriteNode *player = [[SKSpriteNode alloc] initWithColor:[SKColor grayColor] size:CGSizeMake(64,32)];
+    SKSpriteNode *player = [SKSpriteNode spriteNodeWithImageNamed:@"basket"];
+    player.size=CGSizeMake(80,80)
+    ;//[[SKSpriteNode alloc] initWithColor:[SKColor grayColor] size:CGSizeMake(64,64)];
     player.name = @"player";
     
     player.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:player.size];
@@ -106,7 +114,6 @@ static int level=1;
 
 -(void) addFruit
 {
-    float choice=skRand(0,100);
     SKSpriteNode *fruit = [self newApple];
     
     fruit.physicsBody.categoryBitMask=fruitCat;
@@ -120,7 +127,7 @@ static int level=1;
     int speed = 10-(level/2);
     
     SKAction *fall = [SKAction sequence:@[
-                                          [SKAction moveToY:-5 duration:10.0]]];
+                                          [SKAction moveToY:-5 duration:speed]]];
     
     [fruit runAction: [SKAction repeatActionForever:fall]];
     fruit.physicsBody.affectedByGravity = NO;
@@ -130,7 +137,9 @@ static int level=1;
 
 - ( SKSpriteNode *) newApple
 {
-    SKSpriteNode *apple = [[SKSpriteNode alloc] initWithColor:[SKColor redColor] size:CGSizeMake(10,10)];
+  //  SKSpriteNode *apple = [[SKSpriteNode alloc] initWithColor:[SKColor redColor] size:CGSizeMake(10,10)];
+    SKSpriteNode *apple  = [SKSpriteNode spriteNodeWithImageNamed:@"apple"];
+    apple.size=CGSizeMake(50,50);
     apple.name =@"apple";
     
     return apple;
@@ -175,7 +184,8 @@ static int level=1;
     
     if((firstBody.categoryBitMask & playerCat)!=0
        && (secondBody.categoryBitMask & fruitCat)!=0){
-        [self catchedApple:secondBody.node];
+        SKSpriteNode *tmp = secondBody.node;
+        [self catchedApple:tmp];
     }
 }
 
@@ -204,7 +214,7 @@ static int level=1;
     NSLog(@"new level");
     if (level > 9)
     {
-        NSLog(@"finnished");
+        level=10;
     }
 
     
@@ -213,13 +223,8 @@ static int level=1;
 -(void) gameOver
 {
     NSLog(@"inside gameover");
-    int highScore = [[[NSUserDefaults standardUserDefaults] objectForKey:@"HighScore"] intValue ];
-    if (highScore < _player_score){
-        highScore = _player_score;
-    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:highScore] forKey:@"HighScore"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    }
-    SKScene * gameOverScene = [[gameOver alloc] initWithSize:self.size score:_player_score highscore:highScore];
+
+    SKScene * gameOverScene = [[gameOver alloc] initWithSize:self.size score:_player_score ];
         SKTransition *doors = [SKTransition doorsOpenVerticalWithDuration:0];
         [self.view presentScene:gameOverScene transition:doors];
     
