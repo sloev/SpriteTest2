@@ -75,7 +75,7 @@ static int level=1;
     SKLabelNode *scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
     scoreLabel.name = @"score";
     scoreLabel.text = [NSString stringWithFormat: @"%d",_player_score];
-    scoreLabel.fontSize = 40;
+    scoreLabel.fontSize = 50;
     scoreLabel.position = CGPointMake(scoreLabel.fontSize,self.size.height-scoreLabel.fontSize);
     scoreLabel.zPosition=2;
     
@@ -243,6 +243,7 @@ static inline CGFloat skRand(CGFloat low, CGFloat high) {
     return skRandf() * (high - low) + low;
     
 }
+
 
 -(void)didSimulatePhysics
 

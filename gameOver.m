@@ -95,16 +95,17 @@
         
         UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(self.size.width/2, 100, 400, 40)];
         textField.center = CGPointMake(self.size.width/2,200.0);
-        textField.borderStyle = UITextBorderStyleNone;
-        textField.textColor = [UIColor blackColor];
+        textField.borderStyle = UITextBorderStyleLine;
+        textField.textColor = [UIColor whiteColor];
         textField.font = [UIFont fontWithName:@"Chalkduster" size:38];
         textField.placeholder = @"NAME";
-        textField.backgroundColor = [UIColor whiteColor];
+        textField.backgroundColor = [UIColor blackColor];
         textField.autocorrectionType = UITextAutocorrectionTypeYes;
         textField.keyboardType = UIKeyboardTypeDefault;
         textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         textField.delegate = self;
         [self.view addSubview:textField];
+        [textField becomeFirstResponder];
     }
 }
 
