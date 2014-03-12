@@ -32,18 +32,11 @@ static int level=1;
 {
     
     if (!self.contentCreated)
-        
     {
-        
         [self createSceneContents];
-        
         self.contentCreated = YES;
-        
     }
-    
 }
-
-
 
 - (void)createSceneContents
 
@@ -137,7 +130,6 @@ static int level=1;
 
 - ( SKSpriteNode *) newApple
 {
-  //  SKSpriteNode *apple = [[SKSpriteNode alloc] initWithColor:[SKColor redColor] size:CGSizeMake(10,10)];
     SKSpriteNode *apple  = [SKSpriteNode spriteNodeWithImageNamed:@"apple"];
     apple.size=CGSizeMake(50,50);
     apple.name =@"apple";

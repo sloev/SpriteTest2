@@ -22,7 +22,7 @@
     _score = player_score;
     if (self = [super initWithSize:size]) {
         [self addChild: [self newScoreList]];
-        _readyToReturn = NO;
+        _readyToReturn = YES;
     }
     return self;
 }
@@ -106,6 +106,8 @@
         textField.delegate = self;
         [self.view addSubview:textField];
         [textField becomeFirstResponder];
+        _readyToReturn = NO;
+
     }
 }
 
@@ -150,9 +152,7 @@
 
 
 - (void)touchesBegan:(NSSet *) touches withEvent:(UIEvent *)event
-
 {
-    
     if (_readyToReturn)
         
     {
